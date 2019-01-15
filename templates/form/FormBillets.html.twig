@@ -7,55 +7,58 @@
 {% block body %}
 
 
-<h1 class="display-3 text-center">{{ title }}</h1>
-<link rel="stylesheet" href="calendar.css">
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-      <section class="billetterie">
+    <h1 class="display-3 text-center">{{ title }}</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <section class="billetterie">
 
 
-    {{ form_start(formBillet) }}
+                    {{ form_start(formBillet) }}
 
-      <div class="name">
-            {{ form_row(formBillet.Nom) }}
-              {{ form_row(formBillet.Prenom) }}
-      </div>
+                    <div class="name">
+                        {{ form_row(formBillet.nom) }}
+                        {{ form_row(formBillet.prenom) }}
+                    </div>
 
-      <div class="birthdate">
-            {{ form_row(formBillet.Birth) }}
-      </div>
+                    <div class="birthdate">
+                        {{ form_row(formBillet.dateNaissance) }}
+                    </div>
 
-      <div class="reduced_price">
-            {{ form_row(formBillet.reduced_price) }}
-      </div>
+                    <div class="reduced_price">
+                        {{ form_row(formBillet.reduction) }}
+                    </div>
 
-      <button type="submit" class="btn btn-primary">Suivant</button><br><br><br>
-      <h6> Etape 2/3:</h6>
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66%"></div>
-      </div>
+                    <button type="submit" class="btn btn-primary">Suivant</button>
+                    <br><br><br>
+                    <h6> Etape 2/3:</h6>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                             aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66%"></div>
+                    </div>
 
-      {{ form_end(formBillet) }}
-    </section><br><br><br>
-</div>
-<div class="col-4">
-  <section class="recap">
-    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-      <div class="card-header">Récapitulatif</div>
-        <div class="card-body">
-          <h4 class="card-title">BILLET 1:</h4>
-            <ul>
-              <li class="card-text">BERTET</li>
-              <li class="card-text">Théo</li>
-            </ul>
+                    {{ form_end(formBillet) }}
+                </section>
+                <br><br><br>
+            </div>
+            <div class="col-4">
+                <section class="recap">
+                    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                        <div class="card-header">Récapitulatif</div>
+                        <div class="card-body">
+                            <h4 class="card-title">BILLET 1:</h4>
+                            <ul>
+                                <li class="card-text">BERTET</li>
+                                <li class="card-text">Théo</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+
+            </section>
+
         </div>
-      </div>
     </div>
-
-</section>
-
-</div>
-</div>
-</div>
+    </div>
 {% endblock %}

@@ -3,115 +3,81 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-use Symfony\Component\Form\FormBuilder;
-use Symfony\Component\Form\AbstractType;
+use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Commande;
 use App\Entity\Billet;
-use App\Forms\FormCommande;
-use App\Forms\FormBillets;
+use App\Form\CommandeType;
+use App\Form\BilletType;
 
 
-class HomeController extends AbstractController
+class HomeController extends Controller
 {
     /**
      * @Route("/form", name="form")
      */
-    public function index(/*Request $request,ObjectManager $manager*/)
+    public function index(Request $request, ObjectManager $manager)
     {
+        $commande = new Commande();
 
-      //article = new Article();
-      for($i=1;$i<12;$i++)
-          {
-              $NbBillets[] = $i;
-          }
-      $form = $this->createFormBuilder()
+        $form = $this->createForm(CommandeType::class, $commande);
+        $form->handleRequest($request);
 
-                  ->add('VisitDate', DateType::class, array(
-                    'label' => 'Date de la visite',
-                    'widget' => 'choice',
-                      ))
-                  ->add('Formule', ChoiceType::class, array(
-                    'label' => 'Type du billet',
-                      'choices'  => array(
-                          'Journée' => true,
-                          'Demi-Journée' => false,),
-                      ))
-                  ->add('NbBillet', ChoiceType::class, array(
-                    'label' => 'Nombre de billets',
-                    'choices' => $NbBillets))
-                    ->add('billets', CollectionType::class, array(
-                      'entry_type'   => FormBillets::class,
-                      'allow_add'    => true,
-                      'allow_delete' => true
-                    ))
-                    ->getForm();
-
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($commande);
+            $manager->flush();
+        }
 
         return $this->render('form/index.html.twig', [
             'title' => 'Billetterie',
-            'formBillet' => $form->createView()
+            'formCommande' => $form->createView()
         ]);
     }
 
     /**
      * @Route("/form2", name="form2")
      */
+    public function formBillet(Request $request, ObjectManager $manager)
+    {
+        $billet = new Billet();
 
-    public function form2(){
-$form2 = $this->createFormBuilder()
-      ->add('Nom',TextType::class)
-      ->add('Prenom',TextType::class)
-      ->add('Birth', DateType::class, array(
-          'label'    => 'Date de naissance',))
-      ->add('reduced_price', ChoiceType::class, array(
-          'label'    => 'Tarif Réduit ',))
-      ->getForm();
+        $form2 = $this->createForm(BilletType::class, $billet);
+        $form2->handleRequest($request);
 
-      return $this->render('form/FormBillets.html.twig',[
-        'title' => "Musée du Louvre - Accueil",
-        'formBillet' => $form2->createView()
-      ]);
-}
+        if ($form2->isSubmitted() && $form2->isValid()) {
+            $manager->persist($billet);
+            $manager->flush();
+        }
 
+        return $this->render('form/FormBillets.html.twig', [
+            'title' => 'Billetterie',
+            'formBillet' => $form2->createView()
+        ]);
+    }
 
     /**
      * @Route("/", name="home")
      */
-    public function home(){
-      return $this->render('form/home.html.twig',[
-        'title' => "Musée du Louvre - Accueil",
-      ]);
-
+    public function home()
+    {
+        return $this->render('form/home.html.twig', [
+            'title' => "Musée du Louvre - Accueil",
+        ]);
     }
 
     /**
-     * @Route("/form/new")
+     * @Route("formBillet", name="formBillet")
      */
-    public function new(Request $request)
+    public function test()
     {
 
-        $form = $this->createForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-
-            $em->persist($article);
-            $em->flush();
-        }
-
-        return $this->render('default/new.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        return $this->render('form/FormBillets.html.twig', [
+            'title' => "Billetterie",
+        ]);
     }
+
 
 }

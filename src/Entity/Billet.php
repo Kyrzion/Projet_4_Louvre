@@ -29,7 +29,7 @@ class Billet
     /**
      * @ORM\Column(type="boolean")
      */
-    private $formule;
+    private $reduction;
 
     /**
      * @ORM\Column(type="datetime")
@@ -127,5 +127,29 @@ class Billet
         $this->numeroBillet = $numeroBillet;
 
         return $this;
+    }
+
+    /**
+     * Set reduction
+     *
+     * @param string $reduction
+     *
+     * @return Billet
+     */
+    public function setreduction($reduction)
+    {
+        $this->reduction = $reduction;
+
+        return $this;
+    }
+
+    /**
+     * Get reduction
+     *
+     * @return string
+     */
+    public function getreduction()
+    {
+        return $this->reduction;
     }
 }

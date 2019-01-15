@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommandeRepository")
@@ -20,7 +21,7 @@ class Commande
     /**
      * @ORM\Column(type="integer")
      */
-    private $NombreBillets;
+    private $NbBillet;
 
     /**
      * @ORM\Column(type="integer")
@@ -38,28 +39,38 @@ class Commande
     private $email;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=50)
+     * @Assert\Choice({"1", "0.5"})
+     */
+    private $formule;
+
+    /**
+    * @ORM\ManyToMany(targetEntity="App\Entity\Billet", cascade={"persist"})
+    * @Assert\NotBlank(message="Veuillez selectionner une personne")
+    */
+    private $billets;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $DateCommande;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Billet", mappedBy="billetCommande")
-     */
-    private $billet;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNombreBillets(): ?int
+    public function getNbBillet(): ?int
     {
-        return $this->NombreBillets;
+        return $this->NbBillet;
     }
 
-    public function setNombreBillets(int $NombreBillets): self
+    public function setNbBillet(int $NbBillet): self
     {
-        $this->NombreBillets = $NombreBillets;
+        $this->NbBillet = $NbBillet;
 
         return $this;
     }
@@ -110,6 +121,30 @@ class Commande
         $this->DateCommande = $DateCommande;
 
         return $this;
+    }
+
+    /**
+     * Set formule
+     *
+     * @param string $formule
+     *
+     * @return Commande
+     */
+    public function setFormule($formule)
+    {
+        $this->formule = $formule;
+
+        return $this;
+    }
+
+    /**
+     * Get formule
+     *
+     * @return string
+     */
+    public function getformule()
+    {
+        return $this->formule;
     }
 
 
