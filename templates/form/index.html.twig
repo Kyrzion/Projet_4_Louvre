@@ -4,6 +4,10 @@
 {% endblock %}
 
 {% form_theme formCommande 'bootstrap_4_layout.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+{% endblock %}
 
 {% block body %}
 
@@ -26,21 +30,17 @@
                         {{ form_row(formCommande.Formule) }}
                     </div>
 
-                    <div class="form-group">
-                        {{ form_row(formCommande.NbBillet) }}
-                    </div>
+                    <ul class="billet" data-prototype="{{ form_widget(formCommande.billets.vars.prototype)|e('html_attr') }}">
+                            <li>{{ form_row(formCommande.NbBillet) }}</li>
+                    </ul>
 
                     <div class="email">
                         {{ form_row(formCommande.email) }}
                     </div>
-
-                    <button type="submit" class="btn btn-primary">{{ form_row(formCommande.billet) }}</button>
-                    <br><br><br>
-                    <h6> Etape 1/3:</h6>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                             aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%"></div>
+                    <div class="submit">
+                       {{ form_row(formCommande.valider, {'attr':{'class':'btn btn-primary'}}) }}
                     </div>
+
 
                     {{ form_end(formCommande) }}
                 </section>
@@ -58,26 +58,63 @@
                                 <li class="card-text">Théo</li>
                             </ul>
                         </div>
+                        </div>
                     </div>
-            </div>
-            </section>
-
-        </div>
+                 </section>
+             </div>
     </div>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     {#<script src="{{  absolute_url(asset('public/js/sousFormulaire.js')) }}"></script>#}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
     <script>
+        var $collectionHolder;
+
         $(document).ready(function(){
             $('#commande_NbBillet').on('change',function(e){
                 e.preventDefault();
-                makeForms($('#commande_NbBillet').val() - 1);
-            });
-            function makeForms(NbBillet){
+                $('li.deleteOnChangeForm').remove();
+                // Get the ul that holds the collection of etapes
+                $collectionHolder = $('ul.billet');
+
+                // count the current form inputs we have (e.g. 2), use that as the new
+                // index when inserting a new item (e.g. 2)
+                $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+                var NbBillet = $('#commande_NbBillet').val() - 1;
                 console.log(NbBillet);
+                for(var i = 0;i < NbBillet;i++)
+                {
+                    addBilletForm($collectionHolder);
+                }
+                // $addBilletLink.on('click', function(e) {
+                //     // prevent the link from creating a "#" on the URL
+                //     e.preventDefault();
+                //
+                //     // add a new tag form (see next code block)
+                //     addBilletForm($collectionHolder, $newLinkLi);
+                //
+                //     addBilletForm($('#commande_NbBillet').val() - 1);
+                // });
+            });
+            function addBilletForm($collectionHolder){
+                var prototype = $collectionHolder.data('prototype');
+                var index = $collectionHolder.data('index');
+                var newForm = prototype;
+                newForm = newForm.replace(/__name__/g, index);
+                $collectionHolder.data('index', index + 1);
+                var $newFormLi = $('<li class="deleteOnChangeForm"></li>').append(newForm);
+                $('ul.billet').append($newFormLi);
             };
+
+        });
+
+        $(document).ready(function() {
+            $('.js-datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
         });
     </script>
 {% endblock %}

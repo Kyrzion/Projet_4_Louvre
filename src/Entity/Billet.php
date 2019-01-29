@@ -37,17 +37,18 @@ class Billet
     private $dateNaissance;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $prix;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $numeroBillet;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billet")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets", cascade={"persist"})
+     * @ORM\JoinColumn(name="commande_billet",referencedColumnName="id")
      */
     private $billetCommande;
 

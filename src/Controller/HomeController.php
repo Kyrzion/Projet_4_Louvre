@@ -27,6 +27,7 @@ class HomeController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            dump($commande);
             $manager->persist($commande);
             $manager->flush();
         }
@@ -37,26 +38,6 @@ class HomeController extends Controller
         ]);
     }
 
-    /**
-     * @Route("/form2", name="form2")
-     */
-    public function formBillet(Request $request, ObjectManager $manager)
-    {
-        $billet = new Billet();
-
-        $form2 = $this->createForm(BilletType::class, $billet);
-        $form2->handleRequest($request);
-
-        if ($form2->isSubmitted() && $form2->isValid()) {
-            $manager->persist($billet);
-            $manager->flush();
-        }
-
-        return $this->render('form/FormBillets.html.twig', [
-            'title' => 'Billetterie',
-            'formBillet' => $form2->createView()
-        ]);
-    }
 
     /**
      * @Route("/", name="home")

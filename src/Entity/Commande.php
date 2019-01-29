@@ -24,12 +24,12 @@ class Commande
     private $NbBillet;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $PrixTotal;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $NumeroCommande;
 
@@ -39,16 +39,12 @@ class Commande
     private $email;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=50)
-     * @Assert\Choice({"1", "0.5"})
+     * @ORM\Column(type="boolean")
      */
     private $formule;
 
     /**
-    * @ORM\ManyToMany(targetEntity="App\Entity\Billet", cascade={"persist"})
-    * @Assert\NotBlank(message="Veuillez selectionner une personne")
+    * @ORM\OneToMany(targetEntity="App\Entity\Billet",mappedBy="billetCommande", cascade={"persist","remove"})
     */
     private $billets;
 
@@ -123,6 +119,11 @@ class Commande
         return $this;
     }
 
+    public function getBillets()
+    {
+        return $this->billets;
+    }
+
     /**
      * Set formule
      *
@@ -140,7 +141,7 @@ class Commande
     /**
      * Get formule
      *
-     * @return string
+     * @return boolean
      */
     public function getformule()
     {
@@ -149,6 +150,26 @@ class Commande
 
 
     public function __construct() {
-        $this->billet = new ArrayCollection();
+
+
+
+        $this->billets = new ArrayCollection();
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function addBillet(Billet $billet)
+    {
+        $this->billets[]=$billet;
+        return $this;
+    }
+
+    /**
+     * @param ArrayCollection $billets
+     */
+    public function removeBillet(Billet $billet)
+    {
+        $this->billets->removeElement($billet);
     }
 }

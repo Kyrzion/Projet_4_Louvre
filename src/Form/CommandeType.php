@@ -27,7 +27,9 @@ class CommandeType extends AbstractType
         $builder
             ->add('DateCommande', DateType::class, array(
                 'label' => 'Date de la visite',
-                'widget' => 'choice',
+                'widget' => 'single_text',
+                'attr' => ['class' => 'js-datepicker'],
+                'html5' => false,
             ))
             ->add('Formule', ChoiceType::class, array(
                 'label' => 'Type du billet',
@@ -41,12 +43,14 @@ class CommandeType extends AbstractType
             ->add('email');
 
         $builder
-            ->add('billet', CollectionType::class, array(
+            ->add('billets', CollectionType::class, array(
                 'label' => 'Suivant',
                 'entry_type' => BilletType::class,
                 'allow_add' => true,
                 'allow_delete' => true
-            ));
+            ))
+            ->add('valider',SubmitType::class);
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

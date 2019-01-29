@@ -1,0 +1,23 @@
+{# src/LA/TicketingBundle/Resources/views/Mail/order_success.html.twig #}
+
+<h1>Musée du Louvre - Billetterie</h1>
+
+<h3>Récapitulatif de votre commande :</h3>
+
+<div>
+    <ul>
+        <li>Nombre de ticket : {{ Commande.NbBillets }}</li>
+        <li>Prix total de la commande : {{ Commande.PrixTotal // 100 }}€</li>
+</div>
+
+<p>
+    Vous trouverez ci-dessous les liens pour télécharger vos billets :
+</p>
+
+{% for billet in Commande.Billet
+    <p>
+        {{ billet.nom }} {{ billet.prenom - {{ billet.prix }} € <br/>
+        Le {{ commance.DateCommande }} :
+        <a href="{{ absolute_url(path('#.pdf', {'id':billet.id})) }}">Billet n°{{ loop.index }}</a><br/>
+        </p>
+{% enfor %}
