@@ -396,6 +396,7 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Services\Mailer" class="App\Services\Mailer" public="false" autowire="true" autoconfigure="true"/>
+    <service id="App\Services\Tarif" class="App\Services\Tarif" public="false" autowire="true" autoconfigure="true"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -4317,17 +4318,18 @@
         <argument>make:migration</argument>
       </call>
     </service>
-    <service id=".service_locator.OLaif_L" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.AdWdB2i" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+        <argument key="tarif" type="service" id="App\Services\Tarif"/>
       </argument>
     </service>
-    <service id=".service_locator.PZ7IX_6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.YRlylfU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.OLaif_L"/>
-        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.OLaif_L"/>
+        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.AdWdB2i"/>
+        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.AdWdB2i"/>
       </argument>
     </service>
     <service id=".service_locator.yQVjGlt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -4569,7 +4571,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.PZ7IX_6"/>
+      <argument type="service" id=".service_locator.YRlylfU"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -4946,7 +4948,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.PZ7IX_6"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.YRlylfU"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".service_locator.AoifO_3" alias=".2_ServiceLocator~AotQvKq" public="false"/>

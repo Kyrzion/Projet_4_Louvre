@@ -75,78 +75,81 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
         // line 8
         echo "
 
-<h1 class=\"display-3 text-center\">";
+    <h1 class=\"display-3 text-center\">";
         // line 10
         echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 10, $this->source); })()), "html", null, true);
         echo "</h1>
-<link rel=\"stylesheet\" href=\"calendar.css\">
-<div class=\"container\">
-  <div class=\"row\">
-    <div class=\"col-8\">
-      <section class=\"billetterie\">
+
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-8\">
+                <section class=\"billetterie\">
 
 
-    ";
+                    ";
         // line 18
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 18, $this->source); })()), 'form_start');
         echo "
 
-      <div class=\"name\">
-            ";
+                    <div class=\"name\">
+                        ";
         // line 21
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 21, $this->source); })()), "nom", array()), 'row');
         echo "
-              ";
+                        ";
         // line 22
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 22, $this->source); })()), "prenom", array()), 'row');
         echo "
-      </div>
+                    </div>
 
-      <div class=\"birthdate\">
-            ";
+                    <div class=\"birthdate\">
+                        ";
         // line 26
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 26, $this->source); })()), "dateNaissance", array()), 'row');
         echo "
-      </div>
+                    </div>
 
-      <div class=\"reduced_price\">
-            ";
+                    <div class=\"reduced_price\">
+                        ";
         // line 30
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 30, $this->source); })()), "reduction", array()), 'row');
         echo "
-      </div>
+                    </div>
 
-      <button type=\"submit\" class=\"btn btn-primary\">Suivant</button><br><br><br>
-      <h6> Etape 2/3:</h6>
-      <div class=\"progress\">
-        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" aria-valuenow=\"66\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 66%\"></div>
-      </div>
+                    <button type=\"submit\" class=\"btn btn-primary\">Suivant</button>
+                    <br><br><br>
+                    <h6> Etape 2/3:</h6>
+                    <div class=\"progress\">
+                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\"
+                             aria-valuenow=\"66\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 66%\"></div>
+                    </div>
 
-      ";
-        // line 39
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 39, $this->source); })()), 'form_end');
+                    ";
+        // line 41
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 41, $this->source); })()), 'form_end');
         echo "
-    </section><br><br><br>
-</div>
-<div class=\"col-4\">
-  <section class=\"recap\">
-    <div class=\"card text-white bg-primary mb-3\" style=\"max-width: 20rem;\">
-      <div class=\"card-header\">Récapitulatif</div>
-        <div class=\"card-body\">
-          <h4 class=\"card-title\">BILLET 1:</h4>
-            <ul>
-              <li class=\"card-text\">BERTET</li>
-              <li class=\"card-text\">Théo</li>
-            </ul>
+                </section>
+                <br><br><br>
+            </div>
+            <div class=\"col-4\">
+                <section class=\"recap\">
+                    <div class=\"card text-white bg-primary mb-3\" style=\"max-width: 20rem;\">
+                        <div class=\"card-header\">Récapitulatif</div>
+                        <div class=\"card-body\">
+                            <h4 class=\"card-title\">BILLET 1:</h4>
+                            <ul>
+                                <li class=\"card-text\">BERTET</li>
+                                <li class=\"card-text\">Théo</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+
+            </section>
+
         </div>
-      </div>
     </div>
-
-</section>
-
-</div>
-</div>
-</div>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -168,7 +171,7 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
 
     public function getDebugInfo()
     {
-        return array (  127 => 39,  115 => 30,  108 => 26,  101 => 22,  97 => 21,  91 => 18,  80 => 10,  76 => 8,  67 => 7,  48 => 3,  38 => 1,  36 => 5,  15 => 1,);
+        return array (  129 => 41,  115 => 30,  108 => 26,  101 => 22,  97 => 21,  91 => 18,  80 => 10,  76 => 8,  67 => 7,  48 => 3,  38 => 1,  36 => 5,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -182,57 +185,60 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
 {% block body %}
 
 
-<h1 class=\"display-3 text-center\">{{ title }}</h1>
-<link rel=\"stylesheet\" href=\"calendar.css\">
-<div class=\"container\">
-  <div class=\"row\">
-    <div class=\"col-8\">
-      <section class=\"billetterie\">
+    <h1 class=\"display-3 text-center\">{{ title }}</h1>
+
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-8\">
+                <section class=\"billetterie\">
 
 
-    {{ form_start(formBillet) }}
+                    {{ form_start(formBillet) }}
 
-      <div class=\"name\">
-            {{ form_row(formBillet.nom) }}
-              {{ form_row(formBillet.prenom) }}
-      </div>
+                    <div class=\"name\">
+                        {{ form_row(formBillet.nom) }}
+                        {{ form_row(formBillet.prenom) }}
+                    </div>
 
-      <div class=\"birthdate\">
-            {{ form_row(formBillet.dateNaissance) }}
-      </div>
+                    <div class=\"birthdate\">
+                        {{ form_row(formBillet.dateNaissance) }}
+                    </div>
 
-      <div class=\"reduced_price\">
-            {{ form_row(formBillet.reduction) }}
-      </div>
+                    <div class=\"reduced_price\">
+                        {{ form_row(formBillet.reduction) }}
+                    </div>
 
-      <button type=\"submit\" class=\"btn btn-primary\">Suivant</button><br><br><br>
-      <h6> Etape 2/3:</h6>
-      <div class=\"progress\">
-        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" aria-valuenow=\"66\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 66%\"></div>
-      </div>
+                    <button type=\"submit\" class=\"btn btn-primary\">Suivant</button>
+                    <br><br><br>
+                    <h6> Etape 2/3:</h6>
+                    <div class=\"progress\">
+                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\"
+                             aria-valuenow=\"66\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 66%\"></div>
+                    </div>
 
-      {{ form_end(formBillet) }}
-    </section><br><br><br>
-</div>
-<div class=\"col-4\">
-  <section class=\"recap\">
-    <div class=\"card text-white bg-primary mb-3\" style=\"max-width: 20rem;\">
-      <div class=\"card-header\">Récapitulatif</div>
-        <div class=\"card-body\">
-          <h4 class=\"card-title\">BILLET 1:</h4>
-            <ul>
-              <li class=\"card-text\">BERTET</li>
-              <li class=\"card-text\">Théo</li>
-            </ul>
+                    {{ form_end(formBillet) }}
+                </section>
+                <br><br><br>
+            </div>
+            <div class=\"col-4\">
+                <section class=\"recap\">
+                    <div class=\"card text-white bg-primary mb-3\" style=\"max-width: 20rem;\">
+                        <div class=\"card-header\">Récapitulatif</div>
+                        <div class=\"card-body\">
+                            <h4 class=\"card-title\">BILLET 1:</h4>
+                            <ul>
+                                <li class=\"card-text\">BERTET</li>
+                                <li class=\"card-text\">Théo</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+
+            </section>
+
         </div>
-      </div>
     </div>
-
-</section>
-
-</div>
-</div>
-</div>
+    </div>
 {% endblock %}
 ", "form/FormBillets.html.twig", "C:\\Users\\Théo\\projet4\\templates\\form\\FormBillets.html.twig");
     }

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -124,6 +125,29 @@ class Commande
         return $this->billets;
     }
 
+    public function addBillet(Billet $billet): self
+    {
+        if (!$this->billets->contains($billet)) {
+            $this->billets[] = $billet;
+            $billet->setBilletCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBillet(Billet $billet): self
+    {
+        if ($this->billets->contains($billet)) {
+            $this->billets->removeElement($billet);
+            // set the owning side to null (unless already changed)
+            if ($billet->getBilletCommande() === $this) {
+                $billet->setBilletCommande(null);
+            }
+        }
+
+        return $this;
+    }
+
     /**
      * Set formule
      *
@@ -156,20 +180,20 @@ class Commande
         $this->billets = new ArrayCollection();
     }
 
-    /**
-     * @return ArrayCollection
-     */
-    public function addBillet(Billet $billet)
-    {
-        $this->billets[]=$billet;
-        return $this;
-    }
-
-    /**
-     * @param ArrayCollection $billets
-     */
-    public function removeBillet(Billet $billet)
-    {
-        $this->billets->removeElement($billet);
-    }
+//    /**
+//     * @return ArrayCollection
+//     */
+//    public function addBillet(Billet $billet)
+//    {
+//        $this->billets[]=$billet;
+//        return $this;
+//    }
+//
+//    /**
+//     * @param ArrayCollection $billets
+//     */
+//    public function removeBillet(Billet $billet)
+//    {
+//        $this->billets->removeElement($billet);
+//    }
 }

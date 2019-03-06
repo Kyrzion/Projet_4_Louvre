@@ -47,9 +47,14 @@ class CommandeType extends AbstractType
                 'label' => 'Suivant',
                 'entry_type' => BilletType::class,
                 'allow_add' => true,
-                'allow_delete' => true
+                'allow_delete' => true,
+                'by_reference' => false,
+
             ))
-            ->add('valider',SubmitType::class);
+            ->add('valider',SubmitType::class, array(
+                'attr'=>array(
+                    'class'=>'btn btn-primary')
+            ));
 
     }
 

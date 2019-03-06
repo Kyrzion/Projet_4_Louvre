@@ -25,12 +25,14 @@ class BilletType extends AbstractType
             ->add('prenom', TextType::class)
             ->add('dateNaissance', DateType::class, array(
                 'label' => 'Date de naissance',
-                'widget' => 'choice',))
+                'widget' => 'single_text',
+                'attr' => ['class' => 'js-datepicker'],
+                'html5' => false,))
             ->add('reduction', ChoiceType::class, array(
                 'label' => 'Tarif Réduit ',
                 'choices' => array(
-                    'Plein tarif' => true,
-                    'Tarif Etudiant' => false,),
+                    'Plein tarif' => false,
+                    'Tarif Etudiant' => true,),
             ));
     }
 

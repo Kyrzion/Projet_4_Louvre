@@ -1,14 +1,14 @@
 <?php
-// src/LA/TicketingBundle/Services/Mailer.php
+
 
 namespace App\Services;
 
 use Symfony\Component\Templating\EngineInterface;
-use LA\TicketingBundle\Entity\Order;
+use App\Entity\Commande;
 
 class Mailer
 {
-    protected $mailer;
+    private $mailer;
     protected $templating;
     private $from = 'no-reply@louvre.fr';
     private $reply = 'contact@louvre.fr';
@@ -36,12 +36,12 @@ class Mailer
         $this->mailer->send($mail);
     }
 
-    public function sendOrderSuccess(Order $order)
+    public function sendOrderSuccess(Commande $commande)
     {
         $subject = "[Musée du Louvre - Billetterie] Votre commande a été validée.";
         $template = 'App:template:form:Mail:commande_ok.html.twig';
-        $to = $order->getMail();
-        $body = $this->templating->render($template, array('order' => $order));
+        $to = $commande->getMail();
+        $body = $this->templating->render($template, array('commande' => $commande));
         $this->sendMessage($to, $subject, $body);
     }
 }

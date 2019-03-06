@@ -42,13 +42,8 @@ class Billet
     private $prix;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $numeroBillet;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets", cascade={"persist"})
-     * @ORM\JoinColumn(name="commande_billet",referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $billetCommande;
 
@@ -118,18 +113,6 @@ class Billet
         return $this;
     }
 
-    public function getNumeroBillet(): ?int
-    {
-        return $this->numeroBillet;
-    }
-
-    public function setNumeroBillet(int $numeroBillet): self
-    {
-        $this->numeroBillet = $numeroBillet;
-
-        return $this;
-    }
-
     /**
      * Set reduction
      *
@@ -152,5 +135,17 @@ class Billet
     public function getreduction()
     {
         return $this->reduction;
+    }
+
+    public function getBilletCommande(): ?Commande
+    {
+        return $this->billetCommande;
+    }
+
+    public function setBilletCommande(?Commande $billetCommande): self
+    {
+        $this->billetCommande = $billetCommande;
+
+        return $this;
     }
 }
