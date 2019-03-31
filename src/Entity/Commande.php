@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -30,7 +32,10 @@ class Commande
     private $PrixTotal;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * The internal primary key.
+     * @var UuidInterface
+     *
+     * @ORM\Column(type="uuid", unique=true)
      */
     private $NumeroCommande;
 
@@ -84,16 +89,9 @@ class Commande
         return $this;
     }
 
-    public function getNumeroCommande(): ?int
+    public function getNumeroCommande(): UuidInterface
     {
         return $this->NumeroCommande;
-    }
-
-    public function setNumeroCommande(int $NumeroCommande): self
-    {
-        $this->NumeroCommande = $NumeroCommande;
-
-        return $this;
     }
 
     public function getEmail(): ?string
@@ -178,6 +176,7 @@ class Commande
 
 
         $this->billets = new ArrayCollection();
+        $this->NumeroCommande=Uuid::uuid4();
     }
 
 //    /**

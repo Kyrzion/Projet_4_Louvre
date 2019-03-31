@@ -81,6 +81,7 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
         $this->displayParentBlock("stylesheets", $context, $blocks);
         echo "
     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"https://npmcdn.com/flatpickr/dist/themes/dark.css\">
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -90,7 +91,7 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
 
     }
 
-    // line 12
+    // line 13
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -99,72 +100,75 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 13
+        // line 14
         echo "
 
-<h1 class=\"display-3 text-center\">";
-        // line 15
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 15, $this->source); })()), "html", null, true);
+    <h1 class=\"display-3 text-center\">";
+        // line 16
+        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 16, $this->source); })()), "html", null, true);
         echo "</h1>
 
-<div class=\"container\">
-    <div class=\"row\">
-        <div class=\"col-8\">
-            <section class=\"billetterie\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-8\">
+                <section class=\"billetterie\">
 
 
-                ";
-        // line 23
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 23, $this->source); })()), 'form_start');
-        echo "
-
-                <div class=\"calendar\">
-                     ";
-        // line 26
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 26, $this->source); })()), "DateCommande", array()), 'row');
-        echo "
-                </div>
-
-                <div class=\"formule\">
                     ";
-        // line 30
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 30, $this->source); })()), "Formule", array()), 'row');
+        // line 24
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 24, $this->source); })()), 'form_start');
         echo "
-                </div>
 
-                <ul class=\"billet\"
-                    data-prototype=\"";
-        // line 34
-        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 34, $this->source); })()), "billets", array()), "vars", array()), "prototype", array()), 'widget'), "html_attr");
+                    <div class=\"calendar\">
+                        ";
+        // line 27
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 27, $this->source); })()), "DateCommande", array()), 'row');
+        echo "
+                        <p class=\"reste text-success\">Il reste <span id=\"Nbbillets\"></span> billets pour ce jour.</p>
+                        <p class=\"bloque text-danger\">Désolé, il ne reste plus assez de billets pour ce jour.</p>
+                    </div>
+
+                    <div class=\"formule\">
+                        ";
+        // line 33
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 33, $this->source); })()), "Formule", array()), 'row');
+        echo "
+                        <i>La formule Demi-journée vous permet de rentrer dans le musée à partir de 14h.</i>
+                    </div>
+
+                    <ul class=\"billet\"
+                        data-prototype=\"";
+        // line 38
+        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 38, $this->source); })()), "billets", array()), "vars", array()), "prototype", array()), 'widget'), "html_attr");
         echo "\">
-                    <li>";
-        // line 35
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 35, $this->source); })()), "NbBillet", array()), 'row');
-        echo "</li>
-                </ul>
-
-                <div class=\"email\">
-                    ";
+                        <li>";
         // line 39
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 39, $this->source); })()), "email", array()), 'row');
-        echo "
-                </div>
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 39, $this->source); })()), "NbBillet", array()), 'row');
+        echo "</li>
+                    </ul>
 
-
-                ";
+                    <div class=\"email\">
+                        ";
         // line 43
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 43, $this->source); })()), 'form_end');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 43, $this->source); })()), "email", array()), 'row');
         echo "
-            </section>
-            <br><br><br>
-        </div>
+                    </div>
 
-        <div class=\"col-4\">
 
+                    ";
+        // line 47
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formCommande"]) || array_key_exists("formCommande", $context) ? $context["formCommande"] : (function () { throw new Twig_Error_Runtime('Variable "formCommande" does not exist.', 47, $this->source); })()), 'form_end');
+        echo "
+                </section>
+                <br><br><br>
+            </div>
+
+            <div class=\"col-4\">
+
+            </div>
         </div>
     </div>
-</div>
-    ";
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -173,7 +177,7 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
 
     }
 
-    // line 55
+    // line 59
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -182,54 +186,52 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 56
+        // line 60
         echo "        ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
-        ";
-        // line 58
-        echo "        <script src=\"https://cdn.jsdelivr.net/npm/flatpickr\"></script>
+        <script src=\"https://cdn.jsdelivr.net/npm/flatpickr\"></script>
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
 
         <script>
             var \$collectionHolder;
 
-           // var pickr = flatpickr(\".js-datepicker\", {\"disable\": [\"2019-01-01\", \"2019-04-22\", \"2019-05-01\",\"2019-05-08\",\"2019-05-30\",\"2019-06-10\",\"2019-07-14\",\"2019-08-15\",\"2019-11-01\",\"2019-11-11\",\"2019-12-25\",
-           //
-           //          function(date) {
-           //              // return true to disable
-           //              return (date.getDay() === 2 || date.getDay() === 0);
-           //          }
-           //      ],
-           //      \"locale\": {
-           //          \"firstDayOfWeek\": 1 // start week on Monday
-           //      },
-           //      dateFormat: \"Y-m-d\",
-           //  });
+            \$(\"p.bloque\").hide();
+            \$(\"p.reste\").hide();
+            var pickr = flatpickr(\".js-datepicker\", {
+                \"disable\": [\"2019-05-01\", \"2019-11-01\",\"2019-12-25\",
+                    function (date,) {
+                        // return true to disable
+                        return (date.getDay() === 2 || date.getDay() === 0);
+                    }
+                ],
+                \"locale\": {
+                    \"firstDayOfWeek\": 1 // start week on Monday
+                },
+                defaultDate: \"today\",
+                dateFormat: \"Y-m-d\",
+                minDate: \"today\",
+                onChange: function (selectedDates, dateStr) {
+                    \$.get(\"/limitCommande/\" + dateStr, function (data, status) {
+                        console.log(data, status);
 
-            pickr.onChange(function(selectedDates, dateStr, instance){
+                        if (data.quantity > 3) {
+                            \$('#commande_valider').prop('disabled', true);
+                            \$(\"p.bloque\").show();
+                            \$(\"p.reste\").hide();
 
+                        } else {
+                            \$('#commande_valider').prop('disabled', false);
+                            \$('#Nbbillets').text(1000 - data.quantity);
+                            \$(\"p.reste\").show();
+                            \$(\"p.bloque\").hide();
+                        }
+                    })
+                }
             });
 
+
             \$(document).ready(function () {
-
-                \$('#commande_DateCommande').flatpickr();
-
-                \$('#commande_DateCommande').on('change', function (e) {
-
-                    console.log(\$(e).val());
-                     \$.get(\"/limitCommande/2019-02-20\", function (data, status) {
-                         console.log(data, status);
-                        if (data.quantity > 3){
-                            \$('#commande_valider').prop('disabled', true);
-                            alert(\"Déjà plus de 1000 billets vendus pour cette date. Commande impossible.\");
-                        }
-                        else {
-                            \$('#commande_valider').prop('disabled', false);
-                        }
-                    });
-                });
-
                 \$('#commande_NbBillet').on('change', function (e) {
                     e.preventDefault();
                     \$('li.deleteOnChangeForm').remove();
@@ -245,15 +247,6 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
                     for (var i = 0; i < NbBillet; i++) {
                         addBilletForm(\$collectionHolder);
                     }
-                    // \$addBilletLink.on('click', function(e) {
-                    //     // prevent the link from creating a \"#\" on the URL
-                    //     e.preventDefault();
-                    //
-                    //     // add a new tag form (see next code block)
-                    //     addBilletForm(\$collectionHolder, \$newLinkLi);
-                    //
-                    //     addBilletForm(\$('#commande_NbBillet').val() - 1);
-                    // });
                 });
 
                 function addBilletForm(\$collectionHolder) {
@@ -289,7 +282,7 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
 
     public function getDebugInfo()
     {
-        return array (  191 => 58,  186 => 56,  177 => 55,  156 => 43,  149 => 39,  142 => 35,  138 => 34,  131 => 30,  124 => 26,  118 => 23,  107 => 15,  103 => 13,  94 => 12,  80 => 8,  71 => 7,  50 => 3,  40 => 1,  38 => 6,  15 => 1,);
+        return array (  190 => 60,  181 => 59,  160 => 47,  153 => 43,  146 => 39,  142 => 38,  134 => 33,  125 => 27,  119 => 24,  108 => 16,  104 => 14,  95 => 13,  80 => 8,  71 => 7,  50 => 3,  40 => 1,  38 => 6,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -303,96 +296,99 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
 {% block stylesheets %}
     {{ parent() }}
     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"https://npmcdn.com/flatpickr/dist/themes/dark.css\">
 {% endblock %}
 
 {% block body %}
 
 
-<h1 class=\"display-3 text-center\">{{ title }}</h1>
+    <h1 class=\"display-3 text-center\">{{ title }}</h1>
 
-<div class=\"container\">
-    <div class=\"row\">
-        <div class=\"col-8\">
-            <section class=\"billetterie\">
-
-
-                {{ form_start(formCommande) }}
-
-                <div class=\"calendar\">
-                     {{ form_row(formCommande.DateCommande) }}
-                </div>
-
-                <div class=\"formule\">
-                    {{ form_row(formCommande.Formule) }}
-                </div>
-
-                <ul class=\"billet\"
-                    data-prototype=\"{{ form_widget(formCommande.billets.vars.prototype)|e('html_attr') }}\">
-                    <li>{{ form_row(formCommande.NbBillet) }}</li>
-                </ul>
-
-                <div class=\"email\">
-                    {{ form_row(formCommande.email) }}
-                </div>
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-8\">
+                <section class=\"billetterie\">
 
 
-                {{ form_end(formCommande) }}
-            </section>
-            <br><br><br>
-        </div>
+                    {{ form_start(formCommande) }}
 
-        <div class=\"col-4\">
+                    <div class=\"calendar\">
+                        {{ form_row(formCommande.DateCommande) }}
+                        <p class=\"reste text-success\">Il reste <span id=\"Nbbillets\"></span> billets pour ce jour.</p>
+                        <p class=\"bloque text-danger\">Désolé, il ne reste plus assez de billets pour ce jour.</p>
+                    </div>
 
+                    <div class=\"formule\">
+                        {{ form_row(formCommande.Formule) }}
+                        <i>La formule Demi-journée vous permet de rentrer dans le musée à partir de 14h.</i>
+                    </div>
+
+                    <ul class=\"billet\"
+                        data-prototype=\"{{ form_widget(formCommande.billets.vars.prototype)|e('html_attr') }}\">
+                        <li>{{ form_row(formCommande.NbBillet) }}</li>
+                    </ul>
+
+                    <div class=\"email\">
+                        {{ form_row(formCommande.email) }}
+                    </div>
+
+
+                    {{ form_end(formCommande) }}
+                </section>
+                <br><br><br>
+            </div>
+
+            <div class=\"col-4\">
+
+            </div>
         </div>
     </div>
-</div>
-    {% endblock %}
+{% endblock %}
 
     {% block javascripts %}
         {{ parent() }}
-        {#<script src=\"{{  absolute_url(asset('public/js/sousFormulaire.js')) }}\"></script>#}
         <script src=\"https://cdn.jsdelivr.net/npm/flatpickr\"></script>
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
 
         <script>
             var \$collectionHolder;
 
-           // var pickr = flatpickr(\".js-datepicker\", {\"disable\": [\"2019-01-01\", \"2019-04-22\", \"2019-05-01\",\"2019-05-08\",\"2019-05-30\",\"2019-06-10\",\"2019-07-14\",\"2019-08-15\",\"2019-11-01\",\"2019-11-11\",\"2019-12-25\",
-           //
-           //          function(date) {
-           //              // return true to disable
-           //              return (date.getDay() === 2 || date.getDay() === 0);
-           //          }
-           //      ],
-           //      \"locale\": {
-           //          \"firstDayOfWeek\": 1 // start week on Monday
-           //      },
-           //      dateFormat: \"Y-m-d\",
-           //  });
+            \$(\"p.bloque\").hide();
+            \$(\"p.reste\").hide();
+            var pickr = flatpickr(\".js-datepicker\", {
+                \"disable\": [\"2019-05-01\", \"2019-11-01\",\"2019-12-25\",
+                    function (date,) {
+                        // return true to disable
+                        return (date.getDay() === 2 || date.getDay() === 0);
+                    }
+                ],
+                \"locale\": {
+                    \"firstDayOfWeek\": 1 // start week on Monday
+                },
+                defaultDate: \"today\",
+                dateFormat: \"Y-m-d\",
+                minDate: \"today\",
+                onChange: function (selectedDates, dateStr) {
+                    \$.get(\"/limitCommande/\" + dateStr, function (data, status) {
+                        console.log(data, status);
 
-            pickr.onChange(function(selectedDates, dateStr, instance){
+                        if (data.quantity > 3) {
+                            \$('#commande_valider').prop('disabled', true);
+                            \$(\"p.bloque\").show();
+                            \$(\"p.reste\").hide();
 
+                        } else {
+                            \$('#commande_valider').prop('disabled', false);
+                            \$('#Nbbillets').text(1000 - data.quantity);
+                            \$(\"p.reste\").show();
+                            \$(\"p.bloque\").hide();
+                        }
+                    })
+                }
             });
 
+
             \$(document).ready(function () {
-
-                \$('#commande_DateCommande').flatpickr();
-
-                \$('#commande_DateCommande').on('change', function (e) {
-
-                    console.log(\$(e).val());
-                     \$.get(\"/limitCommande/2019-02-20\", function (data, status) {
-                         console.log(data, status);
-                        if (data.quantity > 3){
-                            \$('#commande_valider').prop('disabled', true);
-                            alert(\"Déjà plus de 1000 billets vendus pour cette date. Commande impossible.\");
-                        }
-                        else {
-                            \$('#commande_valider').prop('disabled', false);
-                        }
-                    });
-                });
-
                 \$('#commande_NbBillet').on('change', function (e) {
                     e.preventDefault();
                     \$('li.deleteOnChangeForm').remove();
@@ -408,15 +404,6 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
                     for (var i = 0; i < NbBillet; i++) {
                         addBilletForm(\$collectionHolder);
                     }
-                    // \$addBilletLink.on('click', function(e) {
-                    //     // prevent the link from creating a \"#\" on the URL
-                    //     e.preventDefault();
-                    //
-                    //     // add a new tag form (see next code block)
-                    //     addBilletForm(\$collectionHolder, \$newLinkLi);
-                    //
-                    //     addBilletForm(\$('#commande_NbBillet').val() - 1);
-                    // });
                 });
 
                 function addBilletForm(\$collectionHolder) {

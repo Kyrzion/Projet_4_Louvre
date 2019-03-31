@@ -9,20 +9,18 @@ use App\Entity\Commande;
 class Mailer
 {
     private $mailer;
-    protected $templating;
     private $from = 'no-reply@louvre.fr';
     private $reply = 'contact@louvre.fr';
     private $name = 'Musée du Louvre - Billetterie';
 
-    public function __construct(\Swift_Mailer $mailer, EngineInterface $templating)
+    public function __construct(\Swift_Mailer $mailer )
     {
         $this->mailer = $mailer;
-        $this->templating = $templating;
     }
 
     public function sendMessage($to, $subject, $body)
     {
-        $mail = \Swift_Message::newInstance();
+        $mail = new \Swift_Message();
 
         $mail
             ->setFrom(array($this->from => $this->name))
@@ -30,18 +28,29 @@ class Mailer
             ->setSubject($subject)
             ->setBody($body)
             ->setReplyTo(array($this->reply => $this->name))
-            ->setContentType('text/html')
-        ;
+            ->setContentType('text/html');
 
         $this->mailer->send($mail);
     }
 
-    public function sendOrderSuccess(Commande $commande)
+    public function sendOrderSuccess(Commande $commande, $renderView)
     {
         $subject = "[Musée du Louvre - Billetterie] Votre commande a été validée.";
-        $template = 'App:template:form:Mail:commande_ok.html.twig';
-        $to = $commande->getMail();
-        $body = $this->templating->render($template, array('commande' => $commande));
+
+        $to = $commande->getEmail();
+        $body = $renderView;
         $this->sendMessage($to, $subject, $body);
+    }
+
+    public function sendEmail($mail)
+    {
+        $message = (new \Swift_Message('Récapitulatif de votre commande - Musée du Louvre'))
+            ->setFrom('send@example.com')
+            ->setTo($mail)
+            ->setBody('You should see me from the profiler!');
+
+        $this->mailer->send($message);
+
+        // ...
     }
 }

@@ -27,6 +27,11 @@ class Billet
     private $prenom;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pays;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $reduction;
@@ -70,12 +75,28 @@ class Billet
         return $this->prenom;
     }
 
+
     public function setPrenom(string $prenom): self
     {
         $this->prenom = $prenom;
 
         return $this;
     }
+
+    public function getPays(): ?string
+    {
+        return $this->pays;
+    }
+
+
+    public function setPays(string $pays): self
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+
 
     public function getFormule(): ?bool
     {

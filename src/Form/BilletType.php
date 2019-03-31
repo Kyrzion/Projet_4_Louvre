@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilder;
 use App\Entity\Commande;
@@ -28,11 +29,16 @@ class BilletType extends AbstractType
                 'widget' => 'single_text',
                 'attr' => ['class' => 'js-datepicker'],
                 'html5' => false,))
+            ->add('pays', CountryType::class, [
+                'label' => 'Pays',
+                'placeholder' => 'Choisir un pays',
+            ])
+
             ->add('reduction', ChoiceType::class, array(
                 'label' => 'Tarif Réduit ',
                 'choices' => array(
-                    'Plein tarif' => false,
-                    'Tarif Etudiant' => true,),
+                    'Tarif Normal' => false,
+                    'Tarif Etudiant/Militaire' => true,),
             ));
     }
 

@@ -1,23 +1,108 @@
-{# src/LA/TicketingBundle/Resources/views/Mail/order_success.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Confirmation de votre commande.</title>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation-emails/2.2.1/foundation-emails.min.css"
+          rel="stylesheet">
+    <style type="text/css">
+        body,
+        html,
+        .body {
+            background: #f3f3f3 !important;
+        }
+    </style>
+    <!-- move the above styles into your custom stylesheet -->
+</head>
+<body>
 
-<h1>Musée du Louvre - Billetterie</h1>
 
-<h3>Récapitulatif de votre commande :</h3>
+<div class="container">
 
-<div>
-    <ul>
-        <li>Nombre de ticket : {{ Commande.NbBillets }}</li>
-        <li>Prix total de la commande : {{ Commande.PrixTotal // 100 }}€</li>
+    <spacer size="16"></spacer>
+
+    <row>
+        <columns>
+            <h1>Billetterie - Musée du Louvre</h1>
+            <p>Merci pour votre commande. Nous vous rappellons qu'une pièce justificative vous sera demandé si vous avez
+                selectionné un tarif réduit.</p>
+
+            <spacer size="16"></spacer>
+
+            <callout class="secondary">
+                <row>
+                    <columns large="6">
+                        <p>
+                            <strong>Date de visite</strong><br/>
+                            {{ Commande.DateCommande |date("d/m/Y") }}
+                        </p>
+                        <p>
+                            <strong>Adresse email</strong><br/>
+                            {{ Commande.email }}
+                        </p>
+                        <p>
+                            <strong>Numéro de commande</strong><br/>
+                            {{ Commande.NumeroCommande }}
+                        </p>
+                    </columns>
+                    <columns large="6">
+                        <p>
+                            <strong>Nombre de billet</strong><br/>
+                            {{ Commande.NbBillet -1 }}
+
+                        </p>
+                    </columns>
+                </row>
+            </callout>
+
+            <h4>Détails de votre commande:</h4>
+
+            {% for billet in Commande.Billets %}
+                <table>
+                    <tr>
+                        <th>Nom:</th> <td>{{ billet.nom }} <br/></td>
+                        <th>Prénom:</th><td>{{ billet.prenom }} <br/></td>
+                        <th>Pays:</th><td>{{ billet.pays }} <br/></td>
+                        <th>*Réduction:</th> <td>{{ billet.reduction }} <br/></td>
+                        <th>Prix:</th> <td>{{ billet.prix }} € <br/></td>
+                    </tr>
+
+
+                </table>
+            {% endfor %}
+            <i>Si la réduction est vide, c'est qu'il n'y a pas de réduction, si il y a un " 1 ", la
+                réduction à bien été prise en compte.</i>
+            <table>
+                <tr>
+                    <td colspan="2"><b>Total:</b></td>
+                    <td>{{ Commande.prixTotal }} €</td>
+                </tr>
+            </table>
+            <hr/>
+
+            <h4>Informations:</h4>
+
+            <p>Vous devez impérativement présenter les billets présent dans ce mail à l'entré du musée ainsi que les
+                pièces justificatives demandées.</p>
+        </columns>
+    </row>
+    <row class="footer text-center">
+        <columns large="3">
+            <img src="https://image.noelshack.com/fichiers/2019/13/1/1553506264-louvre-mail.jpg" alt="email_logo">
+        </columns>
+        <columns large="3">
+            <p>
+                Télephone:04.04.40.04.40<br/>
+                Email: billeterielouvreprojet4@gmail.com
+            </p>
+        </columns>
+        <columns large="3">
+            <p>
+                Rue de Rivoli<br/>
+                75001 - Paris | France
+            </p>
+        </columns>
+    </row>
 </div>
-
-<p>
-    Vous trouverez ci-dessous les liens pour télécharger vos billets :
-</p>
-
-{% for billet in Commande.Billet
-    <p>
-        {{ billet.nom }} {{ billet.prenom - {{ billet.prix }} € <br/>
-        Le {{ commance.DateCommande }} :
-        <a href="{{ absolute_url(path('#.pdf', {'id':billet.id})) }}">Billet n°{{ loop.index }}</a><br/>
-        </p>
-{% enfor %}
+</body>
+</html>

@@ -13,6 +13,7 @@ use App\Entity\Billet;
 use App\Form\CommandeType;
 use App\Form\BilletType;
 use App\Services\Tarif;
+use App\Services\Mailer;
 
 
 class HomeController extends Controller
@@ -37,8 +38,10 @@ class HomeController extends Controller
             ]);
         }
 
+
         return $this->render('form/index.html.twig', [
             'title' => 'Billetterie',
+            'commande' => $commande,
             'formCommande' => $form->createView()
         ]);
     }
@@ -76,11 +79,13 @@ class HomeController extends Controller
 
 
     /**
-     * @Route("/success", name="success")
+     * @Route("/success/{id}", name="success")
      */
-    public function success()
+    public function success(Commande $commande, Mailer $mailer)
     {
-        // phpunit
+        $mailer->sendOrderSuccess($commande, $this->renderView('Mails/commande_ok.html.twig', [
+            'Commande' => $commande,
+        ]));
         return $this->render('form/success.html.twig');
     }
 
@@ -96,12 +101,8 @@ class HomeController extends Controller
             ->findBy(
                 ['DateCommande' => $newDate]
             );
-//            $date_visit = $request->query->get('commande_DateCommande');
-//            $newDate = \DateTime::createFromFormat('d/m/Y', $date_visit)->format('Y-m-d');
-//            $new_date = new \DateTime($newDate);
-//            $booking = $this->get(Commande::class);
 
-            return new JsonResponse(['quantity' => sizeof($commande)]);
+        return new JsonResponse(['quantity' => sizeof($commande)]);
 
     }
 }

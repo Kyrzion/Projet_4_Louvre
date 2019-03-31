@@ -14,8 +14,9 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
         // line 1
         $this->parent = $this->loadTemplate("base.html.twig", "form/FormBillets.html.twig", 1);
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
+            'stylesheets' => array($this, 'block_stylesheets'),
             'body' => array($this, 'block_body'),
+            'javascripts' => array($this, 'block_javascripts'),
         );
     }
 
@@ -32,9 +33,6 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "form/FormBillets.html.twig"));
 
-        // line 5
-        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 5, $this->source); })()), array(0 => "bootstrap_4_layout.html.twig"), true);
-        // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -44,17 +42,21 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
 
     }
 
-    // line 3
-    public function block_title($context, array $blocks = array())
+    // line 4
+    public function block_stylesheets($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        echo " ";
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 3, $this->source); })()), "html", null, true);
+        // line 5
+        echo "    ";
+        $this->displayParentBlock("stylesheets", $context, $blocks);
+        echo "
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css\">
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -63,7 +65,7 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
 
     }
 
-    // line 7
+    // line 9
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -72,12 +74,12 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 8
+        // line 10
         echo "
 
     <h1 class=\"display-3 text-center\">";
-        // line 10
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 10, $this->source); })()), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 12, $this->source); })()), "html", null, true);
         echo "</h1>
 
     <div class=\"container\">
@@ -87,69 +89,79 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
 
 
                     ";
-        // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 18, $this->source); })()), 'form_start');
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 20, $this->source); })()), 'form_start');
         echo "
 
                     <div class=\"name\">
                         ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 21, $this->source); })()), "nom", array()), 'row');
+        // line 23
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 23, $this->source); })()), "nom", array()), 'row');
         echo "
                         ";
-        // line 22
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 22, $this->source); })()), "prenom", array()), 'row');
+        // line 24
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 24, $this->source); })()), "prenom", array()), 'row');
         echo "
                     </div>
 
-                    <div class=\"birthdate\">
+                    <div class=\"calendar\">
                         ";
-        // line 26
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 26, $this->source); })()), "dateNaissance", array()), 'row');
+        // line 28
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 28, $this->source); })()), "dateNaissance", array()), 'row');
         echo "
+                        <i>Format: YYYY-MM-JJ</i>
                     </div>
 
                     <div class=\"reduced_price\">
                         ";
-        // line 30
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 30, $this->source); })()), "reduction", array()), 'row');
+        // line 33
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 33, $this->source); })()), "reduction", array()), 'row');
         echo "
+                        <i>Pour toutes réductions, il faudra présenter une pièce justificative à l'entrée du musée.</i>
                     </div>
 
-                    <button type=\"submit\" class=\"btn btn-primary\">Suivant</button>
-                    <br><br><br>
-                    <h6> Etape 2/3:</h6>
-                    <div class=\"progress\">
-                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\"
-                             aria-valuenow=\"66\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 66%\"></div>
-                    </div>
 
                     ";
-        // line 41
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 41, $this->source); })()), 'form_end');
+        // line 38
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 38, $this->source); })()), 'form_end');
         echo "
                 </section>
                 <br><br><br>
             </div>
-            <div class=\"col-4\">
-                <section class=\"recap\">
-                    <div class=\"card text-white bg-primary mb-3\" style=\"max-width: 20rem;\">
-                        <div class=\"card-header\">Récapitulatif</div>
-                        <div class=\"card-body\">
-                            <h4 class=\"card-title\">BILLET 1:</h4>
-                            <ul>
-                                <li class=\"card-text\">BERTET</li>
-                                <li class=\"card-text\">Théo</li>
-                            </ul>
-                        </div>
-                    </div>
-            </div>
-
-            </section>
 
         </div>
     </div>
     </div>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 47
+    public function block_javascripts($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 48
+        echo "    ";
+        $this->displayParentBlock("javascripts", $context, $blocks);
+        echo "
+    <script src=\"https://cdn.jsdelivr.net/npm/flatpickr\"></script>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+
+    <script>
+
+            flatpickr(\".js-datepicker\", {});
+
+    </script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -171,16 +183,18 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
 
     public function getDebugInfo()
     {
-        return array (  129 => 41,  115 => 30,  108 => 26,  101 => 22,  97 => 21,  91 => 18,  80 => 10,  76 => 8,  67 => 7,  48 => 3,  38 => 1,  36 => 5,  15 => 1,);
+        return array (  154 => 48,  145 => 47,  126 => 38,  118 => 33,  110 => 28,  103 => 24,  99 => 23,  93 => 20,  82 => 12,  78 => 10,  69 => 9,  55 => 5,  46 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 
-{% block title %} {{ title }}{% endblock %}
 
-{% form_theme formBillet 'bootstrap_4_layout.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css\">
+{% endblock %}
 
 {% block body %}
 
@@ -200,45 +214,36 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
                         {{ form_row(formBillet.prenom) }}
                     </div>
 
-                    <div class=\"birthdate\">
+                    <div class=\"calendar\">
                         {{ form_row(formBillet.dateNaissance) }}
+                        <i>Format: YYYY-MM-JJ</i>
                     </div>
 
                     <div class=\"reduced_price\">
                         {{ form_row(formBillet.reduction) }}
+                        <i>Pour toutes réductions, il faudra présenter une pièce justificative à l'entrée du musée.</i>
                     </div>
 
-                    <button type=\"submit\" class=\"btn btn-primary\">Suivant</button>
-                    <br><br><br>
-                    <h6> Etape 2/3:</h6>
-                    <div class=\"progress\">
-                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\"
-                             aria-valuenow=\"66\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 66%\"></div>
-                    </div>
 
                     {{ form_end(formBillet) }}
                 </section>
                 <br><br><br>
             </div>
-            <div class=\"col-4\">
-                <section class=\"recap\">
-                    <div class=\"card text-white bg-primary mb-3\" style=\"max-width: 20rem;\">
-                        <div class=\"card-header\">Récapitulatif</div>
-                        <div class=\"card-body\">
-                            <h4 class=\"card-title\">BILLET 1:</h4>
-                            <ul>
-                                <li class=\"card-text\">BERTET</li>
-                                <li class=\"card-text\">Théo</li>
-                            </ul>
-                        </div>
-                    </div>
-            </div>
-
-            </section>
 
         </div>
     </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src=\"https://cdn.jsdelivr.net/npm/flatpickr\"></script>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+
+    <script>
+
+            flatpickr(\".js-datepicker\", {});
+
+    </script>
 {% endblock %}
 ", "form/FormBillets.html.twig", "C:\\Users\\Théo\\projet4\\templates\\form\\FormBillets.html.twig");
     }

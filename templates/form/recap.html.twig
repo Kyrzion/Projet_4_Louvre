@@ -24,6 +24,7 @@
                     <tr>
                     <td>{{ billet.nom }}</td>
                     <td>{{ billet.prenom }}</td>
+                    <td>{{ billet.pays }}</td>
                     <td>{{ billet.prix }}</td>
                     </tr>{% endfor %}
                 </tbody>
@@ -48,7 +49,7 @@
                 </tbody>
             </table>
 
-            <form action="{{ path('success') }}" method="POST">
+            <form action="{{ path('success', { 'id': commande.id }) }}" method="POST">
                 <script
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="pk_test_kkpH5Knrf26xwya6kRvIHAw4"

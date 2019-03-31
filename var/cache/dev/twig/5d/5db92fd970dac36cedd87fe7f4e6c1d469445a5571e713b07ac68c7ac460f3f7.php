@@ -43,7 +43,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
     ";
         // line 8
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 13
+        // line 14
         echo "</head>
 <body>
 <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
@@ -58,33 +58,30 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
         <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 26
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Home <span class=\"sr-only\">(current)</span></a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 29
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("form");
         echo "\">Billetterie</a>
             </li>
         </ul>
-        <form class=\"form-inline my-2 my-lg-0\">
-            <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
-            <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
-        </form>
+        
     </div>
 </nav>
 
 ";
-        // line 39
+        // line 37
         $this->displayBlock('body', $context, $blocks);
-        // line 40
+        // line 38
         echo "
 ";
-        // line 41
+        // line 39
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 45
+        // line 43
         echo "</div>
 </div>
 </div>
@@ -109,7 +106,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 6, $this->source); })()), "html", null, true);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -129,9 +126,10 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
 
         // line 9
         echo "        <link rel=\"stylesheet\" href=\"https://bootswatch.com/4/lux/bootstrap.min.css\">
+
         <link rel=\"stylesheet\" href=\"//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css\">
         <link rel=\"stylesheet\" href=\"";
-        // line 11
+        // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.css"), "html", null, true);
         echo "\">
     ";
@@ -143,7 +141,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
 
     }
 
-    // line 39
+    // line 37
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -160,7 +158,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
 
     }
 
-    // line 41
+    // line 39
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -169,7 +167,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 42
+        // line 40
         echo "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
     <script src=\"//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js\"></script>
 ";
@@ -193,7 +191,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
 
     public function getDebugInfo()
     {
-        return array (  173 => 42,  164 => 41,  147 => 39,  135 => 11,  131 => 9,  122 => 8,  104 => 6,  88 => 45,  86 => 41,  83 => 40,  81 => 39,  68 => 29,  62 => 26,  47 => 13,  45 => 8,  40 => 6,  33 => 1,);
+        return array (  171 => 40,  162 => 39,  145 => 37,  133 => 12,  128 => 9,  119 => 8,  101 => 6,  85 => 43,  83 => 39,  80 => 38,  78 => 37,  68 => 30,  62 => 27,  47 => 14,  45 => 8,  40 => 6,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -203,10 +201,11 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
 <head>
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}{{ title }}{% endblock %}</title>
 
     {% block stylesheets %}
         <link rel=\"stylesheet\" href=\"https://bootswatch.com/4/lux/bootstrap.min.css\">
+
         <link rel=\"stylesheet\" href=\"//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css\">
         <link rel=\"stylesheet\" href=\"{{  asset('css/style.css') }}\">
     {% endblock %}
@@ -229,10 +228,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
                 <a class=\"nav-link\" href=\"{{ path('form') }}\">Billetterie</a>
             </li>
         </ul>
-        <form class=\"form-inline my-2 my-lg-0\">
-            <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
-            <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
-        </form>
+        
     </div>
 </nav>
 
