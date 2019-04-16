@@ -11,7 +11,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Form\FormBuilder;
 use App\Entity\Billet;
 use App\Form\BilletType;
@@ -27,6 +29,7 @@ class CommandeType extends AbstractType
         $builder
             ->add('DateCommande', DateType::class, array(
                 'label' => 'Date de la visite',
+                'required' => true,
                 'widget' => 'single_text',
                 'attr' => ['class' => 'js-datepicker'],
                 'html5' => false,
@@ -39,8 +42,13 @@ class CommandeType extends AbstractType
             ))
             ->add('NbBillet', ChoiceType::class, array(
                 'label' => 'Nombre de billets',
-                'choices' => $NbBillets))
-            ->add('email');
+                'required' => true,
+                'choices' => $NbBillets
+            ))
+
+            ->add('email', EmailType::class, array(
+                'required' => true,
+            ));
 
         $builder
             ->add('billets', CollectionType::class, array(

@@ -86,6 +86,10 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
             echo "</td>
                     <td>";
             // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["billet"], "pays", array()), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["billet"], "prix", array()), "html", null, true);
             echo "</td>
                     </tr>";
@@ -93,7 +97,7 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['billet'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 30
         echo "                </tbody>
             </table>
             <div class=\"card-header\">Récapitulatif de la commande</div>
@@ -110,31 +114,31 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
                 <tbody>
                 <tr>
                     <td>";
-        // line 44
-        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 44, $this->source); })()), "NbBillet", array()) - 1), "html", null, true);
-        echo "</td>
-                    <td>";
         // line 45
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 45, $this->source); })()), "email", array()), "html", null, true);
+        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 45, $this->source); })()), "NbBillet", array()) - 1), "html", null, true);
         echo "</td>
                     <td>";
         // line 46
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 46, $this->source); })()), "prixTotal", array()), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 46, $this->source); })()), "email", array()), "html", null, true);
+        echo "</td>
+                    <td>";
+        // line 47
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 47, $this->source); })()), "prixTotal", array()), "html", null, true);
         echo "</td>
                 </tr>
                 </tbody>
             </table>
 
             <form action=\"";
-        // line 51
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("success", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 51, $this->source); })()), "id", array()))), "html", null, true);
+        // line 52
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("success", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 52, $this->source); })()), "id", array()))), "html", null, true);
         echo "\" method=\"POST\">
                 <script
                         src=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\"
                         data-key=\"pk_test_kkpH5Knrf26xwya6kRvIHAw4\"
                         data-amount=\"";
-        // line 55
-        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 55, $this->source); })()), "prixTotal", array()) * 100), "html", null, true);
+        // line 56
+        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 56, $this->source); })()), "prixTotal", array()) * 100), "html", null, true);
         echo "\"
                         data-name=\"Stripe.com\"
                         data-description=\"Example charge\"
@@ -168,7 +172,7 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
 
     public function getDebugInfo()
     {
-        return array (  137 => 55,  130 => 51,  122 => 46,  118 => 45,  114 => 44,  97 => 29,  89 => 27,  85 => 26,  81 => 25,  78 => 24,  74 => 23,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  141 => 56,  134 => 52,  126 => 47,  122 => 46,  118 => 45,  101 => 30,  93 => 28,  89 => 27,  85 => 26,  81 => 25,  78 => 24,  74 => 23,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -199,6 +203,7 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
                     <tr>
                     <td>{{ billet.nom }}</td>
                     <td>{{ billet.prenom }}</td>
+                    <td>{{ billet.pays }}</td>
                     <td>{{ billet.prix }}</td>
                     </tr>{% endfor %}
                 </tbody>

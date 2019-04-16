@@ -34,6 +34,7 @@ class HomeController extends Controller
             $manager->persist($commande);
             $manager->flush();
             return $this->render('form/recap.html.twig', [
+                'title' => 'Billetterie',
                 'commande' => $commande
             ]);
         }

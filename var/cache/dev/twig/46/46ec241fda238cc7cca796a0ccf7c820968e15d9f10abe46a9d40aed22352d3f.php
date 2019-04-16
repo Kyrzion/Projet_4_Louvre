@@ -168,6 +168,58 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
             </div>
         </div>
     </div>
+
+    <footer class=\"dark bg-primary pt-4\">
+
+        <!-- Footer Links -->
+        <div class=\"container-fluid text-center text-md-left\">
+
+            <!-- Grid row -->
+            <div class=\"row\">
+
+                <!-- Grid column -->
+                <div class=\"col-md-6 mt-md-0 mt-3\">
+
+                    <!-- Content -->
+                    <h5 class=\"text-uppercase text-secondary\">Musée du Louvre - Billetterie</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class=\"clearfix w-100 d-md-none pb-3\">
+
+                <!-- Grid column -->
+                <div class=\"col-md-3 mb-md-0 mb-3\">
+
+                    <!-- Links -->
+                    <h5 class=\"text-uppercase text-secondary\">Liens</h5>
+
+                    <ul class=\"text-secondary list-unstyled \">
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Accueil</a>
+                        </li>
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Billetterie</a>
+                        </li>
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Site Officiel</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class=\"footer-copyright text-center py-3 text-secondary\">© 2019 Copyright - BERTET Théo
+        </div>
+        <!-- Copyright -->
+
+    </footer>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -177,7 +229,7 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
 
     }
 
-    // line 59
+    // line 111
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -186,7 +238,7 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 60
+        // line 112
         echo "        ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
@@ -282,7 +334,7 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
 
     public function getDebugInfo()
     {
-        return array (  190 => 60,  181 => 59,  160 => 47,  153 => 43,  146 => 39,  142 => 38,  134 => 33,  125 => 27,  119 => 24,  108 => 16,  104 => 14,  95 => 13,  80 => 8,  71 => 7,  50 => 3,  40 => 1,  38 => 6,  15 => 1,);
+        return array (  242 => 112,  233 => 111,  160 => 47,  153 => 43,  146 => 39,  142 => 38,  134 => 33,  125 => 27,  119 => 24,  108 => 16,  104 => 14,  95 => 13,  80 => 8,  71 => 7,  50 => 3,  40 => 1,  38 => 6,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -343,6 +395,58 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
             </div>
         </div>
     </div>
+
+    <footer class=\"dark bg-primary pt-4\">
+
+        <!-- Footer Links -->
+        <div class=\"container-fluid text-center text-md-left\">
+
+            <!-- Grid row -->
+            <div class=\"row\">
+
+                <!-- Grid column -->
+                <div class=\"col-md-6 mt-md-0 mt-3\">
+
+                    <!-- Content -->
+                    <h5 class=\"text-uppercase text-secondary\">Musée du Louvre - Billetterie</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class=\"clearfix w-100 d-md-none pb-3\">
+
+                <!-- Grid column -->
+                <div class=\"col-md-3 mb-md-0 mb-3\">
+
+                    <!-- Links -->
+                    <h5 class=\"text-uppercase text-secondary\">Liens</h5>
+
+                    <ul class=\"text-secondary list-unstyled \">
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Accueil</a>
+                        </li>
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Billetterie</a>
+                        </li>
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Site Officiel</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class=\"footer-copyright text-center py-3 text-secondary\">© 2019 Copyright - BERTET Théo
+        </div>
+        <!-- Copyright -->
+
+    </footer>
 {% endblock %}
 
     {% block javascripts %}

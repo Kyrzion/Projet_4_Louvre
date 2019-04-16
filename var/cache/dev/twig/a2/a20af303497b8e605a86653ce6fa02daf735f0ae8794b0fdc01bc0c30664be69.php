@@ -62,10 +62,61 @@ class __TwigTemplate_142f322f1e6d1985b1aea82d4c527e6c7a08366b2476a72b3ca24731273
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("form");
         echo "\"><button type=\"button\" class=\"btn btn-outline-primary\">Billetterie</button></a></center>
   <hr class=\"my-4\">
-  <p>Exposition du moment: Un rêve d'Italie</p>
+ <center> <p>Exposition du moment: Un rêve d'Italie</p>
+  <img src=\"https://www.italieaparis.net/actualite/public/art/image16551.jpg\"></center>
 </div>
 
+    <footer class=\"dark bg-primary pt-4\">
 
+        <!-- Footer Links -->
+        <div class=\"container-fluid text-center text-md-left\">
+
+            <!-- Grid row -->
+            <div class=\"row\">
+
+                <!-- Grid column -->
+                <div class=\"col-md-6 mt-md-0 mt-3\">
+
+                    <!-- Content -->
+                    <h5 class=\"text-uppercase text-secondary\">Musée du Louvre - Billetterie</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class=\"clearfix w-100 d-md-none pb-3\">
+
+                <!-- Grid column -->
+                <div class=\"col-md-3 mb-md-0 mb-3\">
+
+                    <!-- Links -->
+                    <h5 class=\"text-uppercase text-secondary\">Liens</h5>
+
+                    <ul class=\"text-secondary list-unstyled \">
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Accueil</a>
+                        </li>
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Billetterie</a>
+                        </li>
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Site Officiel</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class=\"footer-copyright text-center py-3 text-secondary\">© 2019 Copyright - BERTET Théo
+        </div>
+        <!-- Copyright -->
+
+    </footer>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -100,10 +151,61 @@ class __TwigTemplate_142f322f1e6d1985b1aea82d4c527e6c7a08366b2476a72b3ca24731273
   <p class=\"lead\">Achetez vos billets en ligne</p>
   <a href=\"{{path('form')}}\"><button type=\"button\" class=\"btn btn-outline-primary\">Billetterie</button></a></center>
   <hr class=\"my-4\">
-  <p>Exposition du moment: Un rêve d'Italie</p>
+ <center> <p>Exposition du moment: Un rêve d'Italie</p>
+  <img src=\"https://www.italieaparis.net/actualite/public/art/image16551.jpg\"></center>
 </div>
 
+    <footer class=\"dark bg-primary pt-4\">
 
+        <!-- Footer Links -->
+        <div class=\"container-fluid text-center text-md-left\">
+
+            <!-- Grid row -->
+            <div class=\"row\">
+
+                <!-- Grid column -->
+                <div class=\"col-md-6 mt-md-0 mt-3\">
+
+                    <!-- Content -->
+                    <h5 class=\"text-uppercase text-secondary\">Musée du Louvre - Billetterie</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class=\"clearfix w-100 d-md-none pb-3\">
+
+                <!-- Grid column -->
+                <div class=\"col-md-3 mb-md-0 mb-3\">
+
+                    <!-- Links -->
+                    <h5 class=\"text-uppercase text-secondary\">Liens</h5>
+
+                    <ul class=\"text-secondary list-unstyled \">
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Accueil</a>
+                        </li>
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Billetterie</a>
+                        </li>
+                        <li>
+                            <a href=\"#!\" class=\"text-secondary\">Site Officiel</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class=\"footer-copyright text-center py-3 text-secondary\">© 2019 Copyright - BERTET Théo
+        </div>
+        <!-- Copyright -->
+
+    </footer>
 {% endblock %}
 ", "form/home.html.twig", "C:\\Users\\Théo\\projet4\\templates\\form\\home.html.twig");
     }

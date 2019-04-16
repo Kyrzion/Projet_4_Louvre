@@ -39,7 +39,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
         // line 6
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-
+    <link rel=\"icon\" href=\" http://www.iconarchive.com/download/i83765/iconka/landmarks/paris-louvre.ico\" />
     ";
         // line 8
         $this->displayBlock('stylesheets', $context, $blocks);
@@ -47,7 +47,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
         echo "</head>
 <body>
 <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
-
+    <a href=\"/\"><img src=\"https://image.noelshack.com/fichiers/2019/13/1/1553506264-louvre-mail.jpg\" alt=\"email_logo\"> &nbsp;&nbsp;</a>&nbsp;
     <a class=\"navbar-brand\" href=\"/\">Musée du Louvre</a>
     <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\"
             aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -69,7 +69,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
         echo "\">Billetterie</a>
             </li>
         </ul>
-        
+
     </div>
 </nav>
 
@@ -202,7 +202,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     <title>{% block title %}{{ title }}{% endblock %}</title>
-
+    <link rel=\"icon\" href=\" http://www.iconarchive.com/download/i83765/iconka/landmarks/paris-louvre.ico\" />
     {% block stylesheets %}
         <link rel=\"stylesheet\" href=\"https://bootswatch.com/4/lux/bootstrap.min.css\">
 
@@ -212,7 +212,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
 </head>
 <body>
 <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
-
+    <a href=\"/\"><img src=\"https://image.noelshack.com/fichiers/2019/13/1/1553506264-louvre-mail.jpg\" alt=\"email_logo\"> &nbsp;&nbsp;</a>&nbsp;
     <a class=\"navbar-brand\" href=\"/\">Musée du Louvre</a>
     <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\"
             aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -228,7 +228,7 @@ class __TwigTemplate_3d32c9fa5b871566cb37e6c9fc1f894a4e442dab43c7edbab0927c81f52
                 <a class=\"nav-link\" href=\"{{ path('form') }}\">Billetterie</a>
             </li>
         </ul>
-        
+
     </div>
 </nav>
 

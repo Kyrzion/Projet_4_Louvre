@@ -112,18 +112,25 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
                         <i>Format: YYYY-MM-JJ</i>
                     </div>
 
-                    <div class=\"reduced_price\">
+                    <div class=\"name\">
                         ";
         // line 33
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 33, $this->source); })()), "reduction", array()), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 33, $this->source); })()), "pays", array()), 'row');
+        echo "
+                    </div>
+
+                    <div class=\"reduced_price\">
+                        ";
+        // line 37
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 37, $this->source); })()), "reduction", array()), 'row');
         echo "
                         <i>Pour toutes réductions, il faudra présenter une pièce justificative à l'entrée du musée.</i>
                     </div>
 
 
                     ";
-        // line 38
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 38, $this->source); })()), 'form_end');
+        // line 42
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 42, $this->source); })()), 'form_end');
         echo "
                 </section>
                 <br><br><br>
@@ -141,7 +148,7 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
 
     }
 
-    // line 47
+    // line 51
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -150,7 +157,7 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 48
+        // line 52
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
@@ -183,7 +190,7 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
 
     public function getDebugInfo()
     {
-        return array (  154 => 48,  145 => 47,  126 => 38,  118 => 33,  110 => 28,  103 => 24,  99 => 23,  93 => 20,  82 => 12,  78 => 10,  69 => 9,  55 => 5,  46 => 4,  15 => 1,);
+        return array (  161 => 52,  152 => 51,  133 => 42,  125 => 37,  118 => 33,  110 => 28,  103 => 24,  99 => 23,  93 => 20,  82 => 12,  78 => 10,  69 => 9,  55 => 5,  46 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -217,6 +224,10 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
                     <div class=\"calendar\">
                         {{ form_row(formBillet.dateNaissance) }}
                         <i>Format: YYYY-MM-JJ</i>
+                    </div>
+
+                    <div class=\"name\">
+                        {{ form_row(formBillet.pays) }}
                     </div>
 
                     <div class=\"reduced_price\">
