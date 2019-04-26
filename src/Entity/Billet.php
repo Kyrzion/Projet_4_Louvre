@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BilletRepository")
@@ -45,6 +46,7 @@ class Billet
 
     /**
      * @ORM\Column(type="integer", nullable=false)
+     * @var string A "d-m-Y" formatted value
      */
     private $prix;
 

@@ -16,6 +16,7 @@
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
+                    <th>Pays</th>
                     <th>Prix (en €)</th>
                 </tr>
                 </thead>
@@ -44,7 +45,7 @@
                 <tr>
                     <td>{{ commande.NbBillet -1}}</td>
                     <td>{{ commande.email }}</td>
-                    <td>{{ commande.prixTotal }}</td>
+                    <td id="total">{{ commande.prixTotal }}</td>
                 </tr>
                 </tbody>
             </table>

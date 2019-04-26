@@ -12,10 +12,12 @@ class Mailer
     private $from = 'no-reply@louvre.fr';
     private $reply = 'contact@louvre.fr';
     private $name = 'Musée du Louvre - Billetterie';
+    private $twig;
 
-    public function __construct(\Swift_Mailer $mailer )
+    public function __construct(\Swift_Mailer $mailer)
     {
         $this->mailer = $mailer;
+
     }
 
     public function sendMessage($to, $subject, $body)

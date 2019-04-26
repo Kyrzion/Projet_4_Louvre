@@ -33,10 +33,10 @@ class BilletType extends AbstractType
                 'constraints' => [new Length(['max' => 15])]
             ))
             ->add('dateNaissance', DateType::class, array(
-                'label' => 'Date de naissance',
+                'label' => 'Date de naissance (JJ/MM/AAAA)',
                 'required' => true,
                 'widget' => 'single_text',
-                'attr' => ['class' => 'js-datepicker'],
+                'format' => 'dd/MM/yyyy',
                 'html5' => false,))
             ->add('pays', CountryType::class, [
                 'label' => 'Pays',

@@ -130,6 +130,7 @@
                 },
                 defaultDate: "today",
                 dateFormat: "Y-m-d",
+                defaultTime:"now",
                 minDate: "today",
                 onChange: function (selectedDates, dateStr) {
                     $.get("/limitCommande/" + dateStr, function (data, status) {

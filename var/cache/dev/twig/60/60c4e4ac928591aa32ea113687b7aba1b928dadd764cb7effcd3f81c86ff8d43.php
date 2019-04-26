@@ -65,31 +65,32 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
+                    <th>Pays</th>
                     <th>Prix (en €)</th>
                 </tr>
                 </thead>
                 <tbody>
                 ";
-        // line 23
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 23, $this->source); })()), "billets", array()));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 24, $this->source); })()), "billets", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["billet"]) {
-            // line 24
+            // line 25
             echo "                    <tr>
                     <td>";
-            // line 25
+            // line 26
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["billet"], "nom", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 26
+            // line 27
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["billet"], "prenom", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 27
+            // line 28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["billet"], "pays", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 28
+            // line 29
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["billet"], "prix", array()), "html", null, true);
             echo "</td>
                     </tr>";
@@ -97,7 +98,7 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['billet'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 31
         echo "                </tbody>
             </table>
             <div class=\"card-header\">Récapitulatif de la commande</div>
@@ -114,31 +115,31 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
                 <tbody>
                 <tr>
                     <td>";
-        // line 45
-        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 45, $this->source); })()), "NbBillet", array()) - 1), "html", null, true);
-        echo "</td>
-                    <td>";
         // line 46
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 46, $this->source); })()), "email", array()), "html", null, true);
+        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 46, $this->source); })()), "NbBillet", array()) - 1), "html", null, true);
         echo "</td>
                     <td>";
         // line 47
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 47, $this->source); })()), "prixTotal", array()), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 47, $this->source); })()), "email", array()), "html", null, true);
+        echo "</td>
+                    <td>";
+        // line 48
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 48, $this->source); })()), "prixTotal", array()), "html", null, true);
         echo "</td>
                 </tr>
                 </tbody>
             </table>
 
             <form action=\"";
-        // line 52
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("success", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 52, $this->source); })()), "id", array()))), "html", null, true);
+        // line 53
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("success", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 53, $this->source); })()), "id", array()))), "html", null, true);
         echo "\" method=\"POST\">
                 <script
                         src=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\"
                         data-key=\"pk_test_kkpH5Knrf26xwya6kRvIHAw4\"
                         data-amount=\"";
-        // line 56
-        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 56, $this->source); })()), "prixTotal", array()) * 100), "html", null, true);
+        // line 57
+        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 57, $this->source); })()), "prixTotal", array()) * 100), "html", null, true);
         echo "\"
                         data-name=\"Stripe.com\"
                         data-description=\"Example charge\"
@@ -172,7 +173,7 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
 
     public function getDebugInfo()
     {
-        return array (  141 => 56,  134 => 52,  126 => 47,  122 => 46,  118 => 45,  101 => 30,  93 => 28,  89 => 27,  85 => 26,  81 => 25,  78 => 24,  74 => 23,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  142 => 57,  135 => 53,  127 => 48,  123 => 47,  119 => 46,  102 => 31,  94 => 29,  90 => 28,  86 => 27,  82 => 26,  79 => 25,  75 => 24,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -195,6 +196,7 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
+                    <th>Pays</th>
                     <th>Prix (en €)</th>
                 </tr>
                 </thead>

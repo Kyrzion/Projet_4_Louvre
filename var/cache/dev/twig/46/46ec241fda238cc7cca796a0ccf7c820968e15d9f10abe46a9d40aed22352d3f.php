@@ -262,6 +262,7 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
                 },
                 defaultDate: \"today\",
                 dateFormat: \"Y-m-d\",
+                defaultTime:\"now\",
                 minDate: \"today\",
                 onChange: function (selectedDates, dateStr) {
                     \$.get(\"/limitCommande/\" + dateStr, function (data, status) {
@@ -471,6 +472,7 @@ class __TwigTemplate_3898e9f5cf261f20954aba246926c174f4066f957d02494f4ceb52b2722
                 },
                 defaultDate: \"today\",
                 dateFormat: \"Y-m-d\",
+                defaultTime:\"now\",
                 minDate: \"today\",
                 onChange: function (selectedDates, dateStr) {
                     \$.get(\"/limitCommande/\" + dateStr, function (data, status) {
