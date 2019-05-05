@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -64,6 +65,20 @@ class Commande
      * @Assert\NotBlank
      */
     private $DateCommande;
+
+    /**
+     * @Assert\Callback
+     */
+    public function validate(ExecutionContextInterface $context, $payload)
+    {
+        if ($this->getformule() && date('G') >= 14 && $this->getDateCommande()->diff(new \DateTime())->d==0) {
+            dump($this->getDateCommande()->diff(new \DateTime())->d==0);
+            $context->buildViolation('Vous ne pouvez pas réserver un billet journée après 14h pour le jour même.')
+                ->atPath('DateCommande')
+                ->addViolation();
+        }
+    }
+
 
 
     public function getId(): ?int

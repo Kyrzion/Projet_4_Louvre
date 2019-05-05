@@ -37,8 +37,8 @@ class CommandeType extends AbstractType
             ->add('Formule', ChoiceType::class, array(
                 'label' => 'Type du billet',
                 'choices' => array(
-                    'Journée' => true,
-                    'Demi-Journée' => false,),
+                    'Journée' => false,
+                    'Demi-Journée' => true,),
             ))
             ->add('NbBillet', ChoiceType::class, array(
                 'label' => 'Nombre de billets',

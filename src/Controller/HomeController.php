@@ -87,7 +87,9 @@ class HomeController extends Controller
         $mailer->sendOrderSuccess($commande, $this->renderView('Mails/commande_ok.html.twig', [
             'Commande' => $commande,
         ]));
-        return $this->render('form/success.html.twig');
+        return $this->render('form/success.html.twig', [
+            'title' => 'Commande confirmée',
+        ]);
     }
 
 
