@@ -122,7 +122,7 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
         // line 47
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 47, $this->source); })()), "email", array()), "html", null, true);
         echo "</td>
-                    <td>";
+                    <td id=\"total\">";
         // line 48
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["commande"]) || array_key_exists("commande", $context) ? $context["commande"] : (function () { throw new Twig_Error_Runtime('Variable "commande" does not exist.', 48, $this->source); })()), "prixTotal", array()), "html", null, true);
         echo "</td>
@@ -225,7 +225,7 @@ class __TwigTemplate_3b21bf9dcc8b604bd4e2d46d5048cc36c345549e7dac8eeac5e7df3771e
                 <tr>
                     <td>{{ commande.NbBillet -1}}</td>
                     <td>{{ commande.email }}</td>
-                    <td>{{ commande.prixTotal }}</td>
+                    <td id=\"total\">{{ commande.prixTotal }}</td>
                 </tr>
                 </tbody>
             </table>

@@ -83,6 +83,11 @@
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="env(DATABASE_URL)"></parameter>
     <parameter key="locale">en</parameter>
+    <parameter key="tarif_bebe">0</parameter>
+    <parameter key="tarif_enfant">8</parameter>
+    <parameter key="tarif_normal">16</parameter>
+    <parameter key="tarif_senior">12</parameter>
+    <parameter key="tarif_reduit">10</parameter>
     <parameter key="fragment.renderer.hinclude.global_template"></parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>
@@ -403,10 +408,12 @@
     <service id="App\Services\Mailer" class="App\Services\Mailer" public="false" autowire="true" autoconfigure="true">
       <argument type="service" id="swiftmailer.mailer.default"/>
     </service>
-    <service id="App\Services\Tarif" class="App\Services\Tarif" public="false" autowire="true" autoconfigure="true"/>
-    <service id="App\Validator\DateTime" class="App\Validator\DateTime" public="false" autowire="true" autoconfigure="true"/>
-    <service id="App\Validator\DateTimeValidator" class="App\Validator\DateTimeValidator" public="false" autowire="true" autoconfigure="true">
-      <tag name="validator.constraint_validator"/>
+    <service id="App\Services\Tarif" class="App\Services\Tarif" public="false" autowire="true" autoconfigure="true">
+      <argument>0</argument>
+      <argument>8</argument>
+      <argument>16</argument>
+      <argument>12</argument>
+      <argument>10</argument>
     </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
@@ -1033,7 +1040,7 @@
       <argument type="service" id=".1_PhpArrayAdapter~LFHc51T"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory" public="false">
-      <argument type="service" id=".service_locator.7rnq7ua"/>
+      <argument type="service" id=".service_locator.HKoUR8q"/>
     </service>
     <service id="validator.expression" class="Symfony\Component\Validator\Constraints\ExpressionValidator" public="false">
       <tag name="validator.constraint_validator" alias="validator.expression"/>
@@ -4185,8 +4192,6 @@
     <service id=".abstract.instanceof.App\Repository\BilletRepository" class="App\Repository\BilletRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CommandeRepository" class="App\Repository\CommandeRepository" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CommandeRepository" class="App\Repository\CommandeRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Validator\ConstraintValidatorInterface.0.App\Validator\DateTimeValidator" class="App\Validator\DateTimeValidator" public="false" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Validator\DateTimeValidator" class="App\Validator\DateTimeValidator" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
       <tag name="console.command" command="make:auth"/>
       <argument type="service" id="maker.maker.make_authenticator"/>
@@ -4647,10 +4652,9 @@
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id=".errored..service_locator.X1UD9qM.App\Entity\Commande" class="App\Entity\Commande"/>
-    <service id=".service_locator.7rnq7ua" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.HKoUR8q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Validator\DateTimeValidator" type="service" id="App\Validator\DateTimeValidator"/>
         <argument key="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator" type="service" id="doctrine.orm.validator.unique"/>
         <argument key="Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator" type="service" id="security.validator.user_password"/>
         <argument key="Symfony\Component\Validator\Constraints\EmailValidator" type="service" id="validator.email"/>

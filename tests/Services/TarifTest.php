@@ -11,7 +11,7 @@ class TarifTest extends TestCase{
 
     public function testPrix()
     {
-       $tarif = new Tarif();
+       $tarif = new Tarif(0,8,16,12,10);
        $resultat = $tarif->Prix('2016-12-25',false);
        $resultat2 = $tarif->Prix('1950-12-25',false);
        $resultat3 = $tarif->Prix('2000-12-25',false);
@@ -42,7 +42,7 @@ class TarifTest extends TestCase{
        $billet = new Billet();
        $billet2 = new Billet();
        $billet3 = new Billet();
-       $tarif = new Tarif();
+       $tarif = new Tarif(0,8,16,12,10);
 
        $billet->setDateNaissance(new \DateTime('2000-12-25'));
        $billet->setNom('Bertet');

@@ -88,7 +88,7 @@ final class Versions
   'symfony/twig-bundle' => 'v4.1.7@8a3fa53045d70efc5659f8fc43a630df938804b2',
   'symfony/validator' => 'v4.1.11@a2956c89d13da760d07b438a0a0cd7045a628fd4',
   'symfony/web-link' => 'v4.1.7@11788d1e5a32783020c261f864422e39bcf044df',
-  'symfony/yaml' => 'v4.1.7@367e689b2fdc19965be435337b50bc8adf2746c9',
+  'symfony/yaml' => 'v4.1.12@874d9210fe0ad4f6326a45d163ad815a71ad8b38',
   'twig/twig' => 'v2.5.0@6a5f676b77a90823c2d4eaf76137b771adf31323',
   'webmozart/assert' => '1.3.0@0df1908962e7a3071564e857d86874dad1ef204a',
   'zendframework/zend-code' => '3.3.1@c21db169075c6ec4b342149f446e7b7b724f95eb',

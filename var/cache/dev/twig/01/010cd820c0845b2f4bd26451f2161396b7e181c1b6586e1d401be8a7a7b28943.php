@@ -112,7 +112,7 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
                         <i>Format: YYYY-MM-JJ</i>
                     </div>
 
-                    <div class=\"name\">
+                    <div class=\"pays\">
                         ";
         // line 33
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formBillet"]) || array_key_exists("formBillet", $context) ? $context["formBillet"] : (function () { throw new Twig_Error_Runtime('Variable "formBillet" does not exist.', 33, $this->source); })()), "pays", array()), 'row');
@@ -226,7 +226,7 @@ class __TwigTemplate_effb18dbf629cdbc1834e8a590dca95d05382d61df033e3b2bc9c8ade6d
                         <i>Format: YYYY-MM-JJ</i>
                     </div>
 
-                    <div class=\"name\">
+                    <div class=\"pays\">
                         {{ form_row(formBillet.pays) }}
                     </div>
 

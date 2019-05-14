@@ -122,13 +122,13 @@
                 "disable": ["2019-05-01", "2019-11-01","2019-12-25",
                     function (date,) {
                         // return true to disable
-                        return (/*date.getDay() === 2 ||*/ date.getDay() === 0);
+                        return (date.getDay() === 2 || date.getDay() === 0);
                     }
                 ],
                 "locale": {
                     "firstDayOfWeek": 1 // start week on Monday
                 },
-                defaultDate: "today",
+               // defaultDate: "today",
                 dateFormat: "Y-m-d",
                 defaultTime:"now",
                 minDate: "today",

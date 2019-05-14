@@ -4,48 +4,57 @@ namespace App\Services;
 
 use App\Entity\Billet;
 use App\Entity\Commande;
+use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\Yaml\Exception\ParseException;
+use Symfony\Component\Config\FileLocator;
 
 
 class Tarif
 {
-
     private $prixTotal = 0;
-    const TARIF_NORMAL = 16;
-    const TARIF_ENFANT = 8;
-    const TARIF_SENIOR = 12;
-    const TARIF_REDUIT = 10;
-    const TARIF_BEBE = 0;
+    private $tarif_normal;
+    private $tarif_enfant;
+    private $tarif_senior;
+    private $tarif_reduit;
+    private $tarif_bebe;
 
+     public function __construct($tarif_bebe,$tarif_enfant,$tarif_normal,$tarif_senior,$tarif_reduit)
+    {
+       $this->tarif_normal=$tarif_normal;
+       $this->tarif_enfant=$tarif_enfant;
+       $this->tarif_senior=$tarif_senior;
+       $this->tarif_reduit=$tarif_reduit;
+       $this->tarif_bebe=$tarif_bebe;
+    }
 
     public function prix($dateNaissance, $reduction)
     {
-
         $from = new \DateTime($dateNaissance);
         $to = new \DateTime('today');
         $age = $from->diff($to)->y;
 
         switch (true) {
             case $age < 4:
-                $price = self::TARIF_BEBE;
+                $price = $this->tarif_bebe;
                 break;
 
             case $age >= 4 AND $age < 12:
-                $price = self::TARIF_ENFANT;
+                $price = $this->tarif_enfant;
                 break;
 
             case $age >= 12 AND $age < 60:
                 if ($reduction === true) {
-                    $price = self::TARIF_REDUIT;
+                    $price = $this->tarif_reduit;
                 } else {
-                    $price = self::TARIF_NORMAL;
+                    $price = $this->tarif_normal;
                 }
                 break;
 
             case $age > 60:
                 if ($reduction === true) {
-                    $price = self::TARIF_REDUIT;
+                    $price = $this->tarif_reduit;
                 } else {
-                    $price = self::TARIF_SENIOR;
+                    $price = $this->tarif_senior;
                 }
                 break;
         }
